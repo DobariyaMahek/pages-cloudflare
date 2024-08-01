@@ -1,0 +1,51 @@
+@import '../../../styles/mixins/index.scss';
+
+.nodatashowAlignment {
+    padding: 60px 0;
+
+    @include breakpoint("sm-max") {
+        padding: 20px 0;
+    }
+    .iconCenteralignment {
+        display: flex;
+        justify-content: center;
+        padding: 0 0 40px 0;
+
+        @include breakpoint("sm-max") {
+            padding: 0 0 20px 0;
+        }
+
+        img {
+            @include breakpoint("sm-max") {
+                width: 64px;
+            }
+        }
+    }
+
+    h2 {
+        @include heading-50;
+        @include heading-font;
+        color: $theme-white;
+        text-align: center;
+        margin: 0 0 12px 0;
+
+        @include breakpoint("sm-max") {
+            @include heading8-bold;
+            @include heading-font;
+        }
+    }
+
+    span {
+        @include font16;
+        text-align: center;
+        display: block;
+        color: #C1C1C9;
+        line-height: 24px;
+        padding: 0;
+
+        @include breakpoint("sm-max") {
+            font-size: 12px !important;
+            line-height: 20px;
+        }
+    }
+}

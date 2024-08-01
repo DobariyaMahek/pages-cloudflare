@@ -1,0 +1,577 @@
+@import "../../../styles/mixins/index.scss";
+
+.trendingaishortsvideoSection {
+  // padding: 0 0 90px 0;
+  overflow: hidden;
+  @include breakpoint("sm-max") {
+    display: none;
+  }
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include breakpoint("md-max") {
+      padding: 0 0 40px 0;
+    }
+
+    h2 {
+      @include heading2;
+      color: $theme-white;
+      position: relative;
+      display: inline-block;
+      @include heading-font;
+
+      @include breakpoint("md-max") {
+        @include heading3;
+        @include heading-font;
+      }
+
+      @include breakpoint("sm-max") {
+        @include heading8-bold;
+        @include heading-font;
+      }
+
+      &::before {
+        position: absolute;
+        width: 135px;
+        height: 11px;
+        border-radius: 8px;
+        background: #322f87;
+        content: "";
+        left: 0;
+        bottom: 5px;
+        z-index: -9;
+
+        @include breakpoint("sm-max") {
+          width: 100%;
+          bottom: -5px;
+        }
+      }
+    }
+
+    p {
+      @include font16;
+      color: $theme-light-100;
+      padding: 8px 0 0 0;
+
+      @include breakpoint("sm-max") {
+        @include font14;
+        padding: 12px 0 0 0;
+        line-height: 22px;
+      }
+    }
+  }
+
+  .grid {
+    display: flex;
+
+    .videoAlignment {
+      padding: 0 8px;
+
+      @include breakpoint("sm-max") {
+        padding: 0 8px;
+      }
+
+      .videoDetailsAlignment {
+        cursor: pointer;
+        width: 210px;
+        height: 373px;
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+
+        .image {
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+          object-fit: cover;
+
+          .cardImageChild {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+          }
+        }
+
+        video {
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+          object-fit: cover;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+          object-fit: cover;
+          transform: scale(1);
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.1) 0%,
+            #000000 95.55%
+          );
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+          z-index: 9;
+        }
+
+        .videoDescription {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          z-index: 99;
+          padding: 13px 20px 13px 13px;
+          // min-height: 114px;
+
+          .logoAlignment {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            .logoImage {
+              max-width: 30px;
+              width: 30px;
+              min-width: 30px;
+              height: 30px;
+              object-fit: contain;
+
+              .cardImageChild {
+                max-width: 30px;
+                width: 30px;
+                min-width: 30px;
+                height: 30px;
+                object-fit: contain;
+
+                img {
+                  max-width: 30px;
+                  height: 30px;
+                  object-fit: contain;
+                }
+              }
+            }
+
+            h3 {
+              @include font14;
+              color: $theme-white;
+              text-transform: capitalize;
+            }
+          }
+
+          p {
+            @include font12;
+
+            color: $theme-white;
+            padding: 10px 0 0 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+          }
+        }
+
+        .videoPlayIcon {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 99;
+          opacity: 0;
+          transition: 0.5s linear;
+
+          img {
+            width: 48px;
+            height: 48px;
+          }
+        }
+
+        transition: all 0.9s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+        &:hover {
+          transition: all 0.9s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+          img {
+            transition: all 0.9s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+            transform: scale(1.05);
+          }
+
+          .videoPlayIcon {
+            opacity: 1;
+            transition: 0.5s linear;
+          }
+        }
+      }
+    }
+
+    .griditems {
+      overflow: hidden;
+      position: relative;
+
+      .text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        .spacer {
+          padding: 13px;
+
+          @include breakpoint("sm-max") {
+            padding: 20px;
+          }
+
+          img {
+            max-width: 135px;
+            max-height: 30px;
+          }
+
+          p {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            @include font12-bold;
+            margin: 5px 0 0 0;
+            color: $theme-white;
+
+            line-height: 17px;
+            text-overflow: ellipsis;
+
+            @include breakpoint("sm-max") {
+              @include font16-bold;
+            }
+          }
+        }
+      }
+
+      .blur {
+        border-radius: 18px;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.84) 95.53%
+        );
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      video {
+        display: block;
+        height: 380px;
+        object-fit: cover;
+        width: 100%;
+        border-radius: 18px;
+
+        @include breakpoint("sm-max") {
+          height: 420px;
+        }
+      }
+    }
+  }
+.videoAlignment{
+          height: 380px;
+}
+  .videoSkeletonUi {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 15px;
+    .skeletonPlayer {
+      // width: 210px;
+        height: 373px;
+      border-radius: 8px;
+
+      @include breakpoint("sm-max") {
+        height: 350px;
+      }
+    }
+  }
+  .heading {
+    display: flex;
+    align-items: center;
+    padding: 0 0 44px 0;
+    justify-content: space-between;
+
+    @include breakpoint("sm-max") {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      padding: 0;
+    }
+
+    h3 {
+      @include heading2;
+      color: $theme-white;
+      position: relative;
+      display: inline-block;
+      @include heading-font;
+
+      @include breakpoint("md-max") {
+        @include heading3;
+        @include heading-font;
+      }
+
+      @include breakpoint("sm-max") {
+        @include heading6;
+        @include heading-font;
+      }
+
+      span {
+        position: relative;
+        @include heading-font;
+
+        &::before {
+          position: absolute;
+          bottom: 5px;
+          content: "";
+          left: 0;
+          z-index: -1;
+          width: 135px;
+          height: 11px;
+          border-radius: 8px;
+          background: #322f87;
+        }
+      }
+    }
+  }
+
+  .sliderAlignment {
+    padding: 0;
+    height: 373px;
+
+    :global(.slick-slider) {
+      height: 373px;
+    }
+
+    @include breakpoint("sm-max") {
+      padding: 0 0 0 0;
+    }
+
+    .videoAlignment {
+      padding: 0 8px;
+
+      @include breakpoint("sm-max") {
+        padding: 0 8px;
+      }
+
+      .videoDetailsAlignment {
+        cursor: pointer;
+        width: 210px;
+        height: 373px;
+        border-radius: 10px;
+        position: relative;
+        overflow: hidden;
+
+        .image {
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+          object-fit: cover;
+
+          .cardImageChild {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+          }
+        }
+
+        video {
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+          object-fit: cover;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+          object-fit: cover;
+          transform: scale(1);
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.1) 0%,
+            #000000 95.55%
+          );
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+          z-index: 9;
+        }
+
+        .videoDescription {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          z-index: 99;
+          padding: 13px 20px 13px 13px;
+          // min-height: 114px;
+
+          .logoAlignment {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            .logoImage {
+              max-width: 30px;
+              width: 30px;
+              min-width: 30px;
+              height: 30px;
+              object-fit: contain;
+
+              .cardImageChild {
+                max-width: 30px;
+                width: 30px;
+                min-width: 30px;
+                height: 30px;
+                object-fit: contain;
+
+                img {
+                  max-width: 30px;
+                  height: 30px;
+                  object-fit: contain;
+                }
+              }
+            }
+
+            h3 {
+              @include font14;
+
+              color: $theme-white;
+              text-transform: capitalize;
+            }
+          }
+
+          p {
+            @include font12;
+
+            color: $theme-white;
+            padding: 10px 0 0 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+          }
+        }
+
+        .videoPlayIcon {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 99;
+          opacity: 0;
+          transition: 0.5s linear;
+
+          img {
+            width: 48px;
+            height: 48px;
+          }
+        }
+
+        transition: all 0.9s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+        &:hover {
+          transition: all 0.9s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+          img {
+            transition: all 0.9s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+            transform: scale(1.05);
+          }
+
+          .videoPlayIcon {
+            opacity: 1;
+            transition: 0.5s linear;
+          }
+        }
+      }
+    }
+
+    .leftArrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      left: -80px;
+      z-index: 9;
+
+      @include breakpoint("md-max") {
+        left: -10px;
+      }
+    }
+
+    .rightArrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      right: -80px;
+      z-index: 9;
+
+      @include breakpoint("md-max") {
+        right: -10px;
+      }
+
+      img {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.shortVideoSkeletonUi {
+  .shortVideoSkeletImg {
+    width: 100%;
+    height: 380px;
+    border-radius: 10px;
+  }
+}
+
+.webViewAll {
+  display: block;
+
+  @include breakpoint("sm-max") {
+    display: none;
+  }
+}
+
+.mobileViewAll {
+  display: none;
+
+  @include breakpoint("sm-max") {
+    display: block;
+    padding: 20px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}

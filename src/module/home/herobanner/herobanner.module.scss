@@ -1,0 +1,654 @@
+@import '../../../styles/mixins/index.scss';
+
+.herobanner {
+
+    @keyframes vibe1 {
+        0% {
+            transform: translate(0) scale(.95);
+        }
+
+        20% {
+            transform: translate(-2px, 2px) scale(1);
+        }
+
+        40% {
+            transform: translate(-2px, -2px) scale(1.05);
+        }
+
+        60% {
+            transform: translate(2px, -2px) scale(1.1);
+        }
+
+        80% {
+            transform: translate(2px, 2px) scale(1);
+        }
+
+        100% {
+            transform: translate(0) scale(.95);
+        }
+    }
+
+    .relativeSection {
+        position: relative;
+        padding: 100px 0 80px 0;
+        min-height: 540px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @include breakpoint("sm-max") {
+            padding: 80px 0 40px 0;
+            min-height: auto;
+        }
+
+        .first {
+            position: absolute;
+            top: 40px;
+            animation: vibe1 8s ease .2s infinite alternate-reverse;
+            left: 40px;
+
+            @include breakpoint("md-max") {
+                top: 20px;
+            }
+
+
+
+            .image {
+                width: 98px;
+                height: 98px;
+                border-radius: 50%;
+
+
+                @include breakpoint("md-max") {
+                    width: 80px;
+                    height: 80px;
+                    min-height: 80px;
+                }
+
+                @include breakpoint("sm-max") {
+                    width: 50px;
+                    height: 50px;
+                    min-height: 50px;
+                }
+
+                .cardImageChild {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    min-height: 98px;
+
+                    @include breakpoint("md-max") {
+                        min-height: 80px;
+                    }
+
+                    @include breakpoint("sm-max") {
+                        min-height: 50px;
+                    }
+span{
+    display: flex !important;
+    border-radius: 50%;
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+}
+                }
+
+            }
+
+            span {
+                display: block;
+                @include font18;
+                color: $theme-light-white-900;
+                text-align: center;
+
+                @include breakpoint("sm-max") {
+                    display: none;
+                }
+            }
+        }
+
+        .firstRight {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            animation: vibe1 4s ease .2s infinite alternate-reverse;
+
+            @include breakpoint("md-max") {
+                top: 20px;
+            }
+
+
+
+
+            .image {
+                width: 98px;
+                height: 98px;
+                border-radius: 50%;
+
+
+
+                @include breakpoint("md-max") {
+                    width: 80px;
+                    height: 80px;
+                    min-height: 80px;
+                }
+
+                @include breakpoint("sm-max") {
+                    width: 50px;
+                    height: 50px;
+                    min-height: 50px;
+                }
+
+                .cardImageChild {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    min-height: 98px;
+
+                    @include breakpoint("md-max") {
+                        min-height: 80px;
+                    }
+
+                    @include breakpoint("sm-max") {
+                        min-height: 50px;
+                    }
+
+
+
+                span{
+    display: flex !important;
+    border-radius: 50%;
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+}
+                }
+
+            }
+
+            span {
+                display: block;
+                @include font18;
+                color: $theme-light-white-900;
+                text-align: center;
+
+                @include breakpoint("sm-max") {
+                    display: none;
+                }
+            }
+        }
+
+        .three {
+            position: absolute;
+            bottom: 0;
+            left: 60px;
+            animation: vibe1 4s ease .2s infinite alternate-reverse;
+
+            @include breakpoint("sm-max") {
+                bottom: -30px;
+            }
+
+            .image {
+                width: 98px;
+                height: 98px;
+                border-radius: 50%;
+
+
+
+                @include breakpoint("md-max") {
+                    width: 80px;
+                    height: 80px;
+                    min-height: 80px;
+                }
+
+                @include breakpoint("sm-max") {
+                    width: 50px;
+                    height: 50px;
+                    min-height: 50px;
+                }
+
+                .cardImageChild {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    min-height: 98px;
+
+                    @include breakpoint("md-max") {
+                        min-height: 80px;
+                    }
+
+                    @include breakpoint("sm-max") {
+                        min-height: 50px;
+                    }
+
+                   span{
+    display: flex !important;
+    border-radius: 50%;
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+}
+                }
+
+            }
+
+            span {
+                display: block;
+                @include font18;
+                color: $theme-light-white-900;
+                text-align: center;
+
+                @include breakpoint("sm-max") {
+                    display: none;
+                }
+            }
+        }
+
+        .threeRight {
+            position: absolute;
+            bottom: 0;
+            right: 60px;
+            animation: vibe1 2s ease .2s infinite alternate-reverse;
+
+            @include breakpoint("sm-max") {
+                bottom: -30px;
+            }
+
+            .image {
+                width: 98px;
+                height: 98px;
+                border-radius: 50%;
+
+
+                @include breakpoint("md-max") {
+                    width: 80px;
+                    height: 80px;
+                    min-height: 80px;
+                }
+
+                @include breakpoint("sm-max") {
+                    width: 50px;
+                    height: 50px;
+                    min-height: 50px;
+                }
+
+                .cardImageChild {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    min-height: 98px;
+
+                    @include breakpoint("md-max") {
+                        min-height: 80px;
+                    }
+
+                    @include breakpoint("sm-max") {
+                        min-height: 50px;
+                    }
+
+
+                    span{
+    display: flex !important;
+    border-radius: 50%;
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+}
+                }
+
+            }
+
+            span {
+                display: block;
+                @include font18;
+                color: $theme-light-white-900;
+                text-align: center;
+
+                @include breakpoint("sm-max") {
+                    display: none;
+                }
+            }
+        }
+
+        .sec {
+            position: absolute;
+            top: 47%;
+            left: -10px;
+            transform: translateY(-50%);
+            animation: vibe1 6s ease .2s infinite alternate-reverse;
+
+            @include breakpoint("sm-max") {
+                display: none;
+            }
+
+            .image {
+                width: 98px;
+                height: 98px;
+                border-radius: 50%;
+
+
+
+                @include breakpoint("md-max") {
+                    width: 80px;
+                    height: 80px;
+                    min-height: 80px;
+                }
+
+                @include breakpoint("sm-max") {
+                    width: 70px;
+                    height: 70px;
+                    min-height: 70px;
+                }
+
+                .cardImageChild {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    min-height: 98px;
+
+                    @include breakpoint("md-max") {
+                        min-height: 80px;
+                    }
+
+                    @include breakpoint("sm-max") {
+                        min-height: 50px;
+                    }
+
+
+span{
+    display: flex !important;
+    border-radius: 50%;
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%; @include breakpoint("md-max") {
+                            max-width: 80px;
+                        }
+
+                        @include breakpoint("sm-max") {
+                            max-width: 70px;
+                        }
+    }
+}
+                  
+                }
+
+            }
+
+            span {
+                display: block;
+                @include font18;
+                color: $theme-light-white-900;
+                text-align: center;
+            }
+        }
+
+        .secRight {
+            position: absolute;
+            top: 47%;
+            right: -10px;
+            transform: translateY(-50%);
+            animation: vibe1 3s ease .2s infinite alternate-reverse;
+
+            @include breakpoint("sm-max") {
+                display: none;
+            }
+
+            .image {
+                width: 98px;
+                height: 98px;
+                border-radius: 50%;
+
+
+
+                @include breakpoint("md-max") {
+                    width: 80px;
+                    height: 80px;
+                    min-height: 80px;
+                }
+
+                @include breakpoint("sm-max") {
+                    width: 70px;
+                    height: 70px;
+                    min-height: 70px;
+                }
+
+                .cardImageChild {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    min-height: 98px;
+
+                    @include breakpoint("md-max") {
+                        min-height: 80px;
+                    }
+
+                    @include breakpoint("sm-max") {
+                        min-height: 50px;
+                    }
+span{
+    display: flex !important;
+    border-radius: 50%;
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;  @include breakpoint("md-max") {
+                            max-width: 80px;
+                        }
+
+                        @include breakpoint("sm-max") {
+                            max-width: 70px;
+                        }
+    }
+}
+                  
+                }
+
+            }
+
+            span {
+                display: block;
+                @include font18;
+                color: $theme-light-white-900;
+                text-align: center;
+            }
+        }
+
+        .submitButton {
+            display: flex;
+            justify-content: center;
+
+            button {
+                border: none;
+                cursor: pointer;
+                @include font16-bold;
+                border-radius: 30px;
+                color: $theme-white;
+                padding: 15px 45px;
+                background-color: $theme-primary-background-color;
+
+
+                @include breakpoint("sm-max") {
+                    width: 100%;
+                    padding: 11px;
+                }
+            }
+        }
+
+        h1 {
+            max-width: 721px;
+            margin: 0 auto;
+            text-align: center;
+
+            @include breakpoint("md-max") {
+                max-width: 500px;
+            }
+
+            @include breakpoint("sm-max") {
+                max-width: 400px;
+                margin: 0 auto 10px auto;
+            }
+
+
+       
+                @include heading1;
+                @include heading-font;
+
+                color: $theme-white;
+
+                @include breakpoint("md-max") {
+                    @include heading3;
+                    font-size: 50px;
+                    max-width: 500px;
+                    @include heading-font;
+                }
+
+                @include breakpoint("sm-max") {
+                    @include text32;
+                    font-size: 26px !important;
+                    max-width: 400px;
+                    margin: 0 auto 10px auto;
+                }
+
+                span {
+                    @include heading1;
+                    background: linear-gradient(90deg, #F65C54 36.49%, #AB57A5 51.09%, #5C52FB 66.3%);
+                    background-clip: text;
+                    @include heading-font;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+
+                    @include breakpoint("md-max") {
+                        @include heading3;
+                        font-size: 50px;
+                        max-width: 500px;
+                        @include heading-font;
+                    }
+
+                    @include breakpoint("sm-max") {
+                        @include text32;
+                        font-size: 26px !important;
+                        max-width: 400px;
+                        margin: 0 auto 10px auto;
+                    }
+                }
+            
+        }
+
+        .serchbarCenterAlignment {
+            max-width: 480px;
+            width: 480px;
+            margin: 0 auto;
+
+            @include breakpoint("sm-max") {
+                width: 300px;
+
+            }
+        }
+
+
+
+        .twoButtonAlignment {
+            max-width: 480px;
+            display: flex;
+            margin: 0 auto;
+            justify-content: center;
+            gap: 20px;
+            padding: 23px 0;
+
+            @include breakpoint("sm-max") {
+                padding: 30px 0 0 0;
+                gap: 0px;
+
+            }
+
+            button {
+                cursor: pointer;
+                background-color: transparent;
+                @include font16-normal;
+                line-height: normal;
+                border: none;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: $theme-white;
+                text-transform: capitalize;
+                transition: .3s ease-in-out;
+                padding: 10px;
+
+                svg {
+                    @include breakpoint("sm-max") {
+                        max-width: 10px;
+                    }
+                }
+
+                @include breakpoint("sm-max") {
+                    width: auto;
+                    margin: 0 auto;
+                    justify-content: space-between;
+                    padding: 6px;
+                    border: none;
+                    font-size: 12px;
+                    gap: 6px;
+                }
+
+                &:hover {
+
+                    svg {
+                        transform: translateX(3px)
+                    }
+                }
+
+                svg {
+                    transition: .3s ease-in-out;
+                }
+            }
+        }
+
+        .dataalign {
+            margin: auto auto 20px auto;
+            text-align: center;
+                        font-family: $mulish-regular-font;   max-width: 553px;
+                      @include breakpoint("md-max") {
+                         
+                                    max-width: 453px;
+                                }
+                    
+                                @include breakpoint("sm-max") {
+                                    max-width: 343px;
+                                }
+                        // h2 {
+                            span{
+                
+                                font-size: 18px;
+                                line-height: 26px;
+                                font-family: $mulish-regular-font;
+                                color: $theme-light-white;
+                                margin: 0;
+                                text-align: center;
+                                 
+                                @include breakpoint("md-max") {
+                                    @include font14;
+                                    font-size: 18px;
+                                    max-width: 453px;
+                                }
+                    
+                                @include breakpoint("sm-max") {
+                                    @include font14;
+                                    max-width: 343px;
+                                }
+                            }
+                        // }
+        }
+
+    }
+}

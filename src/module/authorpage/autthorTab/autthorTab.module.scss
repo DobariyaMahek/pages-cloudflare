@@ -1,0 +1,139 @@
+@import "../../../styles/mixins/index.scss";
+
+.autthorTabSection {
+  padding: 40px 0 0 0;
+
+  @include breakpoint("sm-max") {
+    padding: 20px 0 0 0;
+  }
+
+  :global(.slick-slide) {
+    padding: 0 8px;
+  }
+  :global(.slick-list) {
+    margin: 0 -8px;
+  }
+
+  .leftArrowDesign {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -50px;
+    z-index: 99;
+    transition: 0.3s ease-in-out;
+
+    @include breakpoint("md-max") {
+      display: none;
+    }
+
+    svg {
+      transform: rotate(90deg);
+    }
+
+    &:hover {
+      background-color: #625df5;
+    }
+  }
+  .rightArrowDesign {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -50px;
+    z-index: 99;
+    transition: 0.3s ease-in-out;
+    @include breakpoint("md-max") {
+      display: none;
+    }
+
+    svg {
+      transform: rotate(-90deg);
+    }
+
+    &:hover {
+      background-color: #625df5;
+    }
+  }
+
+  .autthorTabFlexAlignment {
+    // max-width: 620px;
+    .tabBoxAlignment {
+      padding: 9px 24px;
+      color: #b5b5bb;
+      cursor: pointer;
+      @include font16;
+      line-height: 20px;
+      letter-spacing: 0.48px;
+      border: 1px solid $theme-light-white-800;
+      background-color: transparent;
+      border-radius: 99px;
+      transition: 0.3s ease-in-out;
+      white-space: nowrap;
+
+      &:hover {
+        background-color: $theme-primary-background-color;
+        color: $theme-white;
+      }
+
+      @include breakpoint("sm-max") {
+        padding: 8px 16px;
+        min-width: auto;
+        font-size: 14px;
+      }
+
+      &:hover {
+        background: $theme-primary-background-color;
+        border: 1px solid transparent;
+        transition: 0.4s ease-in-out;
+
+        p {
+          color: rgba(255, 255, 255, 0.9);
+        }
+      }
+
+      &.authorActiveTab {
+        background: $theme-primary-background-color;
+        border: 1px solid transparent;
+        transition: 0.4s ease-in-out;
+
+        p {
+          color: rgba(255, 255, 255, 0.9);
+        }
+      }
+    }
+  }
+}
+
+.skeletonflex {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+
+  .filterBox {
+    width: 136px;
+    height: 46px;
+    border-radius: 30px;
+  }
+
+  br {
+    display: none;
+  }
+}

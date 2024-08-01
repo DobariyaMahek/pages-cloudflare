@@ -1,0 +1,48 @@
+@import '../../../styles/mixins/index.scss';
+
+.browserAllCardDetailsAlignment {
+   .gptCenteredMessage {
+      text-align: center;
+      padding: 20px;
+      border-radius: 5px;
+      color: #ccc;
+      display: block;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      p {
+        font-size: 16px;
+        color: #ccc;
+      }
+    }
+    @include breakpoint("sm-max") {
+        padding: 20px 0 0 0;
+    }
+    .browserAllCardGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 35px;
+
+        @include breakpoint("md-max") {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        @include breakpoint("sm-max") {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+        }
+
+        .browserAllCardGridItem {}
+    }
+}
+
+.topbrowserPaginationAlignment {
+    padding: 40px 0 0 0;
+
+    @include breakpoint("sm-max") {
+        padding: 40px 0;
+    }
+}

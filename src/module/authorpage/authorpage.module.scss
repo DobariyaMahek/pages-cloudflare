@@ -1,0 +1,79 @@
+@import '../../styles/mixins/index.scss';
+
+.authorSection {
+
+    .authorBreadcrumbsSection {
+        .authorBreadcrumbsAlignment {
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @include breakpoint("md-max") {
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+
+            .topBarLeft {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                flex-wrap: wrap;
+
+                @include breakpoint("sm-max") {
+                    gap: 12px;
+                }
+
+                .breadcrumbName {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    cursor: pointer;
+                    @include font16-normal;
+                    color:$theme-light-white-800;
+                    text-transform: capitalize;
+
+                    @include breakpoint("md-max") {
+                        gap: 30px;
+                        justify-content: center;
+                    }
+
+                    @include breakpoint("md-max") {
+                        gap: 12px;
+                        font-size: 12px;
+                        line-height: 18px;
+                    }
+
+                    .topBarLeft {
+                        display: flex;
+                        align-items: center;
+                        gap: 16px;
+
+                        @include breakpoint("sm-max") {
+                            gap: 12px;
+                        }
+
+
+                    }
+
+                }
+            }
+
+        }
+    }
+}
+.skeletonflex {
+    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+    gap: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+.icon{    border-radius: 43%;
+}  
+    br {
+      display: none;
+    }
+  }

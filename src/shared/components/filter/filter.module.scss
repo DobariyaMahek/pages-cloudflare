@@ -1,0 +1,37 @@
+@import "../../../styles/mixins/index.scss";
+
+.filterbutton {
+  margin-right: 8px;
+  @include breakpoint("sm-max") {
+    order: 2;
+  }
+  button {
+    position: relative;
+    border: none;
+    padding: 10px 25px;
+    background-color: rgba(255, 255, 255, 0.1);;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    border-radius: 6px;
+    color: $theme-white;
+    @include font16;
+    p {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background: white;
+      height: 18px;
+      border-radius: 50%;
+      color: #16133f;
+      width: 18px;
+      font-size: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bolder;
+      margin: 0;
+    }
+  }
+}

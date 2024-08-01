@@ -1,0 +1,234 @@
+@import "../../../styles/mixins/index.scss";
+
+.aishortvideosModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(25px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+
+  &.openModalWrapper {
+    opacity: 1;
+    visibility: visible;
+  }
+  .modal {
+    background: #0E1015;
+    max-width: 900px;
+    position: relative;
+    width: 100%;
+
+    @include breakpoint("sm-max") {
+      width: calc(100% - 10px);
+      padding: 12px 15px;
+    }
+    .scrollbarSection {
+      max-height: 440px;
+      overflow: auto;
+
+      @include breakpoint("sm-max") {
+        max-height: auto;
+        overflow: inherit;
+      }
+      h2 {
+        word-wrap: break-word;
+        word-break: break-word;
+      }
+    }
+    .modalCloseMobile {
+      display: none;
+
+      @include breakpoint("sm-max") {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      img {
+        cursor: pointer;
+        @include breakpoint("sm-max") {
+          max-width: 20px;
+        }
+      }
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 390px 2px 1fr;
+      gap: 18px;
+
+      @include breakpoint("sm-max") {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        height: calc(100vh - 160px);
+        overflow-y: auto;
+      }
+      .griditems:last-child {
+        padding: 20px;
+      }
+      .griditems {
+        position: relative;
+
+        .lastText {
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+          width: 100%;
+
+          @include breakpoint("sm-max") {
+            position: static;
+            padding: 10px 0 0 0;
+          }
+
+          p {
+            @include font16-bold;
+            color: $theme-white;
+            text-align: right;
+            margin: 0;
+          }
+        }
+      }
+
+      .line {
+        width: 2px;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.6);
+
+        @include breakpoint("sm-max") {
+          width: 100%;
+          height: 2px;
+        }
+      }
+
+      p {
+        @include font16;
+        line-height: 24px;
+        color: $theme-light-100;
+        a {
+          color: $theme-white;
+          text-decoration-line: underline;
+        }
+      }
+
+      h2 {
+        @include font16-bold;
+        color: $theme-white;
+        margin: 0 0 4px 0;
+      }
+
+      .closeicon {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        @include breakpoint("sm-max") {
+          display: none;
+        }
+
+        img {
+          cursor: pointer;
+        }
+      }
+
+      .video {
+        video {
+          width: 100%;
+          height: 600px;
+          object-fit: cover;
+          display: block;
+
+          @include breakpoint("sm-max") {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modalTopHeaderAlignment {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+
+  .logo {
+    width: 60px;
+    min-width: 60px;
+    max-width: 60px;
+    height: 60px;
+
+
+    @include breakpoint("sm-max") {
+      width: 45px;
+      min-width: 45px;
+      max-width: 45px;
+      height: 45px;
+  
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  .modalTopHeaderName {
+    padding: 8px 0 0 0;
+
+    h6 {
+      @include font18;
+      color: $theme-white;
+      text-transform: uppercase;
+
+      @include breakpoint("sm-max") {
+        @include font14;
+      }
+    }
+
+    p {
+      @include font14;
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+      padding: 4px 0 0 0;
+      @include breakpoint("sm-max") {
+        @include font12-bold;
+      }
+    }
+  }
+}
+
+.mobileView {
+  display: none;
+
+  @include breakpoint("sm-max") {
+    display: block;
+  }
+}
+
+.WebView {
+  display: flex;
+  align-items: flex-start;
+  padding: 0 0 20px 0;
+  justify-content: space-between;
+  @include breakpoint("sm-max") {
+    display: none;
+  }
+}
+
+.modalHeaderFlex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include breakpoint("sm-max") {
+    padding: 0 0 20px 0;
+  }
+}

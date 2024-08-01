@@ -1,0 +1,129 @@
+@import "../../../styles/mixins/index.scss";
+
+.featuredyourtoolbanner {
+  padding: 60px 0;
+
+  .title {
+    padding: 0 0 44px 0;
+
+    @include breakpoint("sm-max") {
+      padding: 0;
+    }
+
+    .centnerAlignment {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 0 0 0;
+
+      .inputBox {
+        width: 400px;
+        position: relative;
+
+        input {
+          width: 100%;
+          border-radius: 999px;
+          height: 46px;
+          padding-left: 16px;
+          padding-right: 60px;
+          background-color: $search-input-background-color;
+          border: 1px solid $search-input-border-color;
+          @include font16;
+          transition: 0.3s ease-in-out;
+          color: $theme-white;
+
+          &:focus {
+            outline: none;
+            border: 1px solid $theme-primary-background-color;
+          }
+        }
+
+        .searchIcon {
+          width: 46px;
+          height: 46px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          position: absolute;
+          top: 0;
+          right: 0;
+          background-color: $theme-primary-background-color;
+          z-index: -1;
+        }
+
+        ::placeholder {
+          @include font16;
+          color: $theme-gray-800;
+        }
+      }
+    }
+
+    P {
+      @include font18;
+      color: $theme-light-white;
+       
+      max-width: 929px;
+      margin: 0 auto;
+      text-align: center;
+
+      @include breakpoint("sm-max") {
+        @include font16;
+      }
+    }
+
+    h3 {
+      @include heading2;
+      margin: 0 0 20px 0;
+      color: $theme-white;
+      position: relative;
+      text-align: center;
+      @include heading-font;
+
+      @include breakpoint("md-max") {
+        @include heading3;
+        @include heading-font;
+        margin: 0 0 12px 0;
+      }
+
+      @include breakpoint("sm-max") {
+        @include heading8-bold;
+        @include heading-font;
+        line-height: 32px;
+      }
+
+
+
+
+      &::before {
+        position: absolute;
+        bottom: 3px;
+        width: 182px;
+        height: 11px;
+        background: #322F87;
+        border-radius: 8px;
+        content: '';
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0 auto;
+        z-index: -1;
+
+        @include breakpoint("md-max") {
+          bottom: -2px;
+          margin: 0 auto;
+          width: 200px;
+        }
+
+        @include breakpoint("sm-max") {
+          width: 115px;
+          bottom: -2px;
+          margin: 0 auto;
+        }
+      }
+
+
+
+    }
+  }
+}

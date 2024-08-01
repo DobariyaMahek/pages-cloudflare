@@ -1,0 +1,239 @@
+@import "../../styles/mixins/index.scss";
+
+.contactUsSection {
+  padding: 80px 0 0 0;
+
+
+  @include breakpoint("sm-max") {
+    padding: 60px 0;
+  }
+
+  .contactUsAlignment {
+    h1 {
+      text-align: center;
+      @include heading-50;
+      color: $theme-white;
+      @include heading-font;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        bottom: 5px;
+        content: "";
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        width: 135px;
+        height: 11px;
+        border-radius: 8px;
+        background: #322f87;
+        
+        @include breakpoint("sm-max") {
+          bottom: -5px;
+      }
+      }
+
+      @include breakpoint("sm-max") {
+        @include heading8-bold;
+        @include heading-font;
+      }
+    }
+
+    .contactUsFormAlignment {
+      padding: 44px 0 0 0;
+
+      @include breakpoint("sm-max") {
+        padding: 40px 0 0 0;
+      }
+      .formBox {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        padding: 55px 50px;
+        border-radius: 18px;
+
+        @include breakpoint("sm-max") {
+          padding: 16px;
+        }
+
+        .formGrid {
+          display: grid;
+          grid-template-columns: 472px 1fr;
+          gap: 56px;
+          align-items: center;
+
+          @include breakpoint("md-max") {
+            grid-template-columns: 1fr;
+            gap: 32px;
+          }
+
+          .formImg {
+            @include breakpoint("md-max") {
+              max-width: 354px;
+              margin: 0 auto;
+
+              img {
+                width: 100%;
+                height: 100%;
+                display: block;
+              }
+            }
+          }
+
+          .formDetailsAlignment {
+            h2 {
+              @include heading7;
+              color: $theme-primary-background-color;
+              padding: 0 0 5px 0;
+              text-align: left;
+
+              @include breakpoint("md-max") {
+                font-size: 32px;
+                line-height: 38px;
+              }
+
+              @include breakpoint("sm-max") {
+                font-size: 28px;
+                line-height: 32px;
+              }
+            }
+
+            p {
+              @include font16;
+              color: $theme-white;
+
+              @include breakpoint("md-max") {
+                font-size: 14px;
+                line-height: 21px;
+              }
+            }
+
+            .formInputAlignment {
+              padding: 35px 0 0 0;
+
+              @include breakpoint("sm-max") {
+                padding: 24px 0 0 0;
+              }
+
+              .input {
+                width: 100%;
+
+                margin: 0 0 30px 0;
+
+                @include breakpoint("sm-max") {
+                  margin: 0 0 16px 0;
+                }
+
+                &:last-child {
+                  margin: 0;
+                }
+
+                input {
+                  width: 100%;
+                  height: 56px;
+                  background: rgba(245, 245, 255, 0.09);
+                  padding: 0 20px;
+                  @include font16-normal;
+                  border: none;
+                  color: $theme-white;
+                  border-radius: 8px;
+
+                  &:focus {
+                    outline: none;
+                  }
+
+                  &::placeholder {
+                    color: rgba(255, 255, 255, 0.7);
+                  }
+
+                  @include breakpoint("md-max") {
+                    height: 50px;
+                    font-size: 14px;
+                    line-height: 21px;
+                  }
+                }
+
+                .errors {
+                  padding: 5px;
+                  color: red;
+                }
+
+                textarea {
+                  width: 100%;
+                  height: 186px;
+                  background: rgba(245, 245, 255, 0.09);
+                  padding: 20px;
+                  @include font16-normal;
+                  border: none;
+                  color: $theme-white;
+                  border-radius: 8px;
+
+                  &:focus {
+                    outline: none;
+                  }
+
+                  &::placeholder {
+                    color: rgba(255, 255, 255, 0.7);
+                  }
+
+                  @include breakpoint("md-max") {
+                    font-size: 14px;
+                    line-height: 21px;
+                  }
+                }
+              }
+            }
+
+            .formButtonAlignment {
+              padding: 35px 0 0 0;
+
+              @include breakpoint("sm-max") {
+                padding: 24px 0 0 0;
+              }
+
+              button {
+                width: 100%;
+                height: 50px;
+                font-size: 18px;
+                line-height: 24px;
+                text-align: center;
+                color: $theme-white;
+                border: none;
+                cursor: pointer;
+                background: $theme-primary-background-color;
+                border: none;
+                border-radius: 8px;
+
+                @include breakpoint("md-max") {
+                  font-size: 16px;
+                  line-height: 24px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.loader {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,193 @@
+@import "../../styles/mixins/index.scss";
+
+.authorsListSection {
+  .authorsListHeading {
+    margin: 40px 0 0 0;
+
+    @include breakpoint("sm-max") {
+      margin: 20px 0 0 0;
+    }
+
+    h1 {
+      text-align: center;
+
+      span {
+        @include heading-50;
+        color: $theme-white;
+        position: relative;
+        @include heading-font;
+
+        @include breakpoint("md-max") {
+          @include heading3;
+          @include heading-font;
+        }
+
+        @include breakpoint("sm-max") {
+          @include heading8-bold;
+          @include heading-font;
+        }
+
+        &::before {
+          position: absolute;
+          bottom: 5px;
+          content: "";
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: -1;
+          width: 100%;
+          height: 11px;
+          border-radius: 8px;
+          background: #322f87;
+
+          @include breakpoint("sm-max") {
+            bottom: -5px;
+          }
+        }
+      }
+    }
+
+    p {
+      padding: 14px 0 0 0;
+      font-size: 18px;
+
+      line-height: 23px;
+      text-align: center;
+      color: #ffffffb2;
+      max-width: 727px;
+      font-family: $mulish-regular-font;
+      margin: 0 auto;
+
+      @include breakpoint("sm-max") {
+        font-size: 14px;
+        max-width: 100%;
+        line-height: 21px;
+      }
+    }
+  }
+
+  .authoorsListDetails {
+    padding: 80px 0 0 0;
+
+    @include breakpoint("md-max") {
+      padding: 60px 0 0 0;
+    }
+
+    .authoorsListGrid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 50px 40px;
+
+      @include breakpoint("md-max") {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      @media only screen and (max-width: "899px") {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px 30px;
+      }
+
+      @include breakpoint("sm-max") {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px 16px;
+      }
+
+      .authoorsListGridItem {
+        span{
+          display: block;
+        }
+        .autorImgBox {
+          width: 100%;
+          background: rgba(255, 255, 255, 0.12);
+          padding: 17px;
+          border-radius: 22px;
+          @include breakpoint("sm-max") {
+            padding: 10px;
+          }
+          .cardImageChild {
+            width: 100%;
+            height: 186px;
+            border-radius: 22px;
+            object-fit: contain;
+            display: block;
+          }
+
+          img {
+            width: 100%;
+            height: 186px;
+            border-radius: 22px;
+            object-fit: contain;
+            display: block;
+
+            @include breakpoint("sm-max") {
+              border-radius: 10px;
+              height: 145px;
+            }
+          }
+        }
+
+        .authorNameDetailsAlignment {
+          padding: 10px 0 0 0;
+
+          h4 {
+            @include heading5;
+            color: $theme-white;
+            font-size: 20px;
+            line-height: 30px;
+            text-align: center;
+
+            @include heading-font;
+
+            @include breakpoint("sm-max") {
+              font-size: 20px;
+              line-height: 26px;
+            }
+          }
+        }
+        .socialAlignment {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 18px;
+          padding: 10px 0 0 0;
+
+          @include breakpoint("sm-max") {
+            gap: 10px;
+            padding: 10px 0 0 0;
+          }
+
+          svg {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+
+            @include breakpoint("sm-max") {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.skeletonflex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 15px 0 0;
+  .icon {
+    border-radius: 50px;
+    width: 32px;
+    height: 32px;
+  }
+  br {
+    display: none;
+  }
+}
+
+.skeletopnNameAlignment {
+  height: 30px;
+  margin: 10px 0 0 0;
+}

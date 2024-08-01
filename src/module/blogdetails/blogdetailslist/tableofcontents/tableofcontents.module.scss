@@ -1,0 +1,62 @@
+@import "../../../../styles/mixins/index.scss";
+
+.tableofcontents {
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px 15px;
+  position: sticky;
+  top: 120px;
+  @include breakpoint("sm-max") {
+    display: none;
+  }
+
+  h6 {
+    @include heading5;
+    margin: 0 0 15px 0;
+    @include heading-font;
+    color: $theme-white;
+  }
+  .allListAlignment {
+    .textGrid:last-child {
+      border: none;
+      padding-bottom: 0;
+    }
+    .textGrid {
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.18);
+      padding: 16px 0;
+      display: grid;
+      grid-template-columns: 9px 1fr;
+      gap: 12px;
+      align-items: center;
+
+      .icon {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background-color: $theme-primary-background-color;
+      }
+
+      span {
+        display: inline-block;
+        @include font14;
+        color: $theme-light-100;
+        letter-spacing: 0.48px;
+         
+        cursor: pointer;
+     
+      }
+    }
+  }
+}
+
+
+.tableofcontentsSkeleton { 
+  width: 100%;
+  height: 48px;
+  margin: 0 0 24px 0;
+}
+
+.tableofcontentsListSkeleton { 
+  width: 100%;
+  height: 24px;
+}

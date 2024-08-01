@@ -1,0 +1,109 @@
+@import '../../../styles/mixins/index.scss';
+
+.featuredGptSection {
+    padding: 80px 0 0 0;
+    min-height: 350px;
+
+    @include breakpoint("sm-max") {
+        padding: 60px 0 0 0;
+    }
+
+    &.spacerRemove {
+        padding: 0;
+    }
+
+    &.secondGptAlignment {
+        padding: 0;
+
+        @include breakpoint("sm-max") {
+            padding: 0;
+        }
+    }
+
+    .featuredGptHeading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 0 40px 0;
+
+        .headingName {
+            h2 {
+                @include heading2;
+                @include heading-font;
+                color: $theme-white;
+                position: relative;
+
+                @include breakpoint("md-max") {
+                    @include heading3;
+                    @include heading-font;
+
+                }
+
+                @include breakpoint("sm-max") {
+                    @include heading8-bold;
+                    @include heading-font;
+
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    height: 11px;
+                    width: 125px;
+                    bottom: 4px;
+                    background: $theme-secondary-background-color;
+                    border-radius: 8px;
+                    z-index: -1;
+
+                    @include breakpoint("sm-max") {
+                        bottom: -4px;
+                    }
+                }
+            }
+
+            p {
+                padding: 8px 0 0 0;
+                @include font16;
+                line-height: 22px;
+                color: $theme-light-100;
+
+                @include breakpoint("sm-max") {
+                    padding: 12px 0 0 0;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+
+    .featuredGptBodyAlignment {
+        // padding: 44px 0 0 0;
+        // @include breakpoint("sm-max") {
+        //     padding: 40px 0 0 0;
+        // }
+        .featuredGptGrid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+
+            @include breakpoint("md-max") {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @include breakpoint("sm-max") {
+                grid-template-columns: repeat(1, 1fr);
+                gap: 20px;
+            }
+        }
+    }
+}
+
+.scrollTopAlignment{
+    margin-bottom: 80px;
+}
+.paginationTopAlignment {
+    padding: 70px  0 0 0;
+    @include breakpoint("sm-max") {
+      padding: 40px 0;
+    }
+  }

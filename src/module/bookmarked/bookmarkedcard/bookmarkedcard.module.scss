@@ -1,0 +1,63 @@
+@import "../../../styles/mixins/index.scss";
+
+.bookmarkedcardAllContnetAlignment {
+  padding: 80px 0 0 0;
+
+  @include breakpoint("md-max") {
+    padding: 0 0 60px 0;
+  }
+
+  @include breakpoint("sm-max") {
+    padding: 0 0 40px 0;
+  }
+
+  .fourGrid {
+    grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    gap: 29px;
+
+    @include breakpoint("md-max") {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    @include breakpoint("sm-max") {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 20px;
+    }
+
+    @media only screen and (max-width: "575px") {
+      grid-template-columns: 1fr;
+      gap: 0 20px;
+    }
+
+    div {
+      margin: 0;
+      // @include breakpoint("sm-max") {
+      //     margin: 0 0 20px 0;
+      // }
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 29px;
+
+    @include breakpoint("md-max") {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    @include breakpoint("sm-max") {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
+    }
+  }
+  .bookmarkPaginationTopAlignment {
+    padding: 70px 0 0 0;
+    @include breakpoint("sm-max") {
+      padding: 40px 0;
+    }
+  }
+}

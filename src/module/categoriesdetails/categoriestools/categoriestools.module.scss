@@ -1,0 +1,113 @@
+@import "../../../styles/mixins/index.scss";
+
+.categoriestoolsallContnetAlignment {
+  padding: 80px 0 0 0;
+
+  @include breakpoint("sm-max") {
+    padding: 60px 0 0 0;
+  }
+
+  .fourgrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 29px;
+    padding: 0 0 90px 0;
+
+    p {
+      color: white;
+    }
+
+  
+
+    @include breakpoint("md-max") {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 30px;
+    }
+
+    @include breakpoint("sm-max") {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 20px;
+    }
+
+    @media only screen and (max-width : "575px") {
+      grid-template-columns: 1fr;
+      gap: 0 20px;
+    }
+  }
+
+  .headingAlignment {
+    padding: 0 0 44px 0;
+
+    @include breakpoint("sm-max") {
+      padding: 0 0 40px 0;
+    }
+
+    h4 {
+      @include heading-40;
+      color: $theme-white;
+      @include heading-font;
+      position: relative;
+
+      @include breakpoint("md-max") {
+        @include heading3;
+        @include heading-font;
+      }
+
+      @include breakpoint("sm-max") {
+        @include heading8-bold;
+        @include heading-font;
+      }
+
+
+
+      &::before {
+        position: absolute;
+        bottom: 2px;
+        content: "";
+        left: 0;
+        z-index: -1;
+        width: 135px;
+        height: 11px;
+        border-radius: 8px;
+        background: #322f87;
+
+        @include breakpoint("sm-max") {
+          bottom: -5px;
+        }
+      }
+    }
+
+    p {
+      @include font16;
+      color: $theme-light-100;
+      padding: 8px 0 0 0;
+  
+      @include breakpoint("sm-max") {
+        @include font14;
+        padding: 12px 0 0 0;
+        line-height: 24px;
+      }
+    }
+  }
+
+  .grid {
+    display: grid;
+    cursor: pointer;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 29px;
+
+    @include breakpoint("md-max") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint("sm-max") {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 30px;
+    }
+
+    div {
+      margin: 0;
+    }
+
+  }
+}

@@ -1,0 +1,214 @@
+@import "../../../styles/mixins/index.scss";
+
+.toolsdetailsBreadcrumbsSection {
+  max-height: 18px;
+  .toolsdetailsBreadcrumbsAlignment {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include breakpoint("md-max") {
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    @include breakpoint("sm-max") {
+      display: none;
+    }
+
+    .topBarLeft {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+
+      @include breakpoint("sm-max") {
+        gap: 12px;
+      }
+
+      .breadcrumbName {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        @include font14;
+         
+        color:$theme-light-white-800;
+        text-transform: capitalize;
+
+        @include breakpoint("md-max") {
+          gap: 30px;
+          justify-content: center;
+        }
+
+        @include breakpoint("md-max") {
+          gap: 12px;
+          font-size: 12px;
+          line-height: 18px;
+        }
+span{
+  display: flex !important;
+      img{
+              width: auto;
+              height: 18px;
+            }
+}
+        .topBarLeft {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+
+          @include breakpoint("sm-max") {
+            gap: 12px;
+          }
+
+          .breadcrumbName {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            cursor: pointer;
+            @include font14;
+            color: $theme-white-2;
+            text-transform: capitalize;
+             
+            @include breakpoint("sm-max") {
+              gap: 12px;
+              font-size: 12px;
+              line-height: 18px;
+            }
+            img{
+              width: auto;
+              height: 18px;
+            }
+          }
+        }
+
+      }
+    }
+
+    .toolsGptSearchAlignment {
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: $theme-light-background;
+      border-radius: 50%;
+      cursor: pointer;
+
+      @include breakpoint("md-max") {
+        width: 100%;
+        display: none;
+      }
+
+
+
+    }
+  }
+
+  .socialAlignment {
+    padding: 12px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
+
+    img {
+      cursor: pointer;
+    }
+  }
+}
+
+.skeletonUi {
+  br {
+    display: none;
+  }
+
+  .breadcrumbSkeleton {
+    height: 21px;
+    width: 100px;
+
+    @include breakpoint("sm-max") {
+      width: 70px;
+      height: 15px;
+      margin: 0 4px;
+    }
+  }
+
+  .first {
+    width: 300px;
+    height: 50px;
+    display: block;
+    margin: 0 0 4px 0;
+
+    @include breakpoint("sm-max") {
+      height: 24px;
+      width: 200px;
+    }
+  }
+
+  .second {
+    width: 300px;
+    height: 24px;
+    display: block;
+    margin: 0 0 4px 0;
+
+    @include breakpoint("sm-max") {
+      height: 16px;
+      width: 200px;
+    }
+  }
+
+  .third {
+    width: 300px;
+    height: 27px;
+    display: block;
+    width: 200px;
+  }
+}
+
+.gptSearchAlignment {
+  width: 400px;
+  height: 55px;
+  position: relative;
+
+  @include breakpoint("md-max") {
+    width: 100%;
+    display: none;
+  }
+
+  input {
+    width: 100%;
+    height: 100%;
+    background: $theme-light-background;
+    border-radius: 12px;
+    padding: 0 25px 0 68px;
+    @include font20-meduim;
+    color: $theme-white;
+    border: none;
+
+    &::placeholder {
+      color: $theme-gpt-input-placeholder-color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    @include breakpoint("sm-max") {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  .searchIon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 25px;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+  }
+}

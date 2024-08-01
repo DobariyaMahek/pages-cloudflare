@@ -1,0 +1,78 @@
+@import "../../styles/mixins/index.scss";
+
+.terms_and_services_section {
+  padding: 80px 0 0 0;
+  @include breakpoint("sm-max") {
+    padding: 60px 0;
+  }
+  .terms_and_services_header {
+    h1 {
+      text-align: center;
+      @include heading-50;
+      color: $theme-white;
+      @include heading-font;
+      position: relative;
+      margin: 0 0 0 0;
+      @include breakpoint("sm-max") {
+        @include heading8-bold;
+        @include heading-font;
+      }
+      &::before {
+        position: absolute;
+        bottom: 5px;
+        content: "";
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        width: 198px;
+        height: 11px;
+        border-radius: 8px;
+        background: #322f87;
+
+        @include breakpoint("sm-max") {
+          bottom: -5px;
+        }
+      }
+    }
+  }
+
+  .terms_and_services_body_alignment {
+    padding: 44px 0 0 0;
+
+    p {
+      padding: 0 0 15px 0;
+      @include font16-normal;
+      color:$theme-light-white-800;
+      line-height: 24px;
+
+      &.second_padding {
+        padding: 0 0 5px 0;
+      }
+    }
+
+    h3 {
+      font-family: "Paytone One", sans-serif;
+      font-size: 32px;
+
+      line-height: 45px;
+      text-align: left;
+      color: $theme-white;
+      padding: 0 0 20px 0;
+
+      @include breakpoint("sm-max") {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+
+    ul {
+      padding: 0 0 15px 20px;
+
+      li {
+        @include font16-normal;
+        color:$theme-light-white-800;
+        padding: 0 0 10px 0;
+      }
+    }
+  }
+}

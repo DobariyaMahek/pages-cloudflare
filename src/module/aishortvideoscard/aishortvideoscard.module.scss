@@ -1,0 +1,221 @@
+@import '../../styles/mixins/index.scss';
+
+.aishortvideoscardAlignment {
+    min-height: 100vh;
+    @include breakpoint("sm-max") {
+        padding: 0 0 60px 0;
+    }
+ 
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 25px;
+
+        @media only screen and (max-width:"1024px") {
+
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        @include breakpoint("md-max") {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media only screen and (max-width:"576px") {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .griditems {
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            border-radius: 8px;
+
+            .text {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+
+                .spacer {
+                    padding: 13px;
+
+                    @include breakpoint("sm-max") {
+                        padding: 10px;
+                    }
+
+                    img {
+                        max-width: 60px;
+                        max-height: 40px;
+                        object-fit: contain;
+                    }
+
+                    p {
+                        display: -webkit-box;
+                        -webkit-line-clamp: 1;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        @include font12-bold;
+                        margin: 5px 0 0 0;
+                        color: $theme-white;
+                        line-height: 17px;
+                        text-overflow: ellipsis;
+
+                        @include breakpoint("sm-max") {
+                            @include font12-bold;
+                        }
+                    }
+
+                    .videoDescription {
+
+                        .logoAlignment {
+                            display: flex;
+                            align-items: center;
+                            gap: 4px;
+
+                            .logoImage {
+                                max-width: 30px;
+                                width: 30px;
+                                min-width: 30px;
+                                height: 30px;
+                                object-fit: contain;
+
+                                .cardImageChild {
+                                    max-width: 30px;
+                                    width: 30px;
+                                    min-width: 30px;
+                                    height: 30px;
+                                    object-fit: contain;
+
+                                    img {
+                                        max-width: 30px;
+                                        height: 30px;
+                                        object-fit: contain;
+                                    }
+                                }
+
+                            }
+
+                            h6 {
+                                @include font14;
+                                 
+                                color: $theme-white;
+                                text-transform: capitalize;
+                                white-space: nowrap;
+
+                                @include breakpoint("sm-max") {
+                                    font-size: 12px;
+                                    line-height: 18px;
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            .blur {
+                border-radius: 8px;
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.84) 95.53%);
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            video {
+                display: block;
+                height: 380px;
+                object-fit: cover;
+                width: 100%;
+                border-radius: 8pc;
+
+
+                @include breakpoint("sm-max") {
+                    height: 350px;
+                }
+            }
+.videoThumbnailImg{
+        height: 380px;
+    span{
+
+        img {
+            display: block;
+            height: 380px;
+            object-fit: cover;
+            width: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+            transform: scale(1);
+    
+            @include breakpoint("sm-max") {
+                height: 280px;
+            }
+    
+        }
+    }
+          @include breakpoint("sm-max") {
+                height: 280px;
+            }
+}
+
+            .videoPlayIcon {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                transition: 0.5s linear;
+
+                img {
+                    width: 48px;
+                    height: 48px;
+                }
+            }
+
+            transition: all 0.9s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+            &:hover {
+                transition: all 0.9s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+                img {
+                    transition: all 0.9s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+                    transform: scale(1.05);
+                }
+
+                .videoPlayIcon {
+                    opacity: 1;
+                    transition: 0.5s linear;
+                }
+            }
+        }
+    }
+}
+
+.videoSkeletonUi {
+    .skeletonPlayer {
+
+        width: 100%;
+        height: 380px;
+        border-radius: 8px;
+            
+
+                @include breakpoint("sm-max") {
+                    height: 280px;
+                }
+
+    }
+}
+
+.pageTopAlignmentSpacer {
+    padding: 60px 0 0 0;
+    @include breakpoint("sm-max") {
+        padding: 0 0 40px 0;
+    }
+}

@@ -1,0 +1,65 @@
+@import "../../../styles/mixins/index.scss";
+
+.featuredToolsBottom_section {
+  padding: 50px 0;
+
+  .notes_box_alignment {
+    max-width: 950px;
+    border: 1.5px solid #ffffff24;
+    background: #ffffff0d;
+    padding: 20px 50px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0 auto;
+    border-radius: 6px;
+
+    h6 {
+      @include font22;
+      position: relative;
+      color: $theme-white;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          #f65c54 0%,
+          #ab57a5 51.14%,
+          #5c52fb 100%
+        );
+      }
+    }
+
+    p {
+      @include font16-bold;
+      line-height: 21px;
+      text-align: left;
+      color: $theme-light-white-800;
+
+      span {
+        color: $theme-white;
+      }
+    }
+  }
+
+  .featured_button_alignment {
+    padding: 40px 0 0 0;
+    max-width: 375px;
+    margin: 0 auto;
+    button {
+      width: 100%;
+      height: 50px;
+      background: $theme-primary-background-color;
+      border: none;
+      border-radius: 30px;
+      @include font16-bold;
+      color: $theme-light-white-800;
+      cursor: pointer;
+    }
+  }
+}

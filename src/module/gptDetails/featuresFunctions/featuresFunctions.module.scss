@@ -1,0 +1,233 @@
+@import '../../../styles/mixins/index.scss';
+
+.featureFunctionSection {
+    padding: 40px 0 0 0;
+
+    .featureFunctionGrid {
+        display: grid;
+        grid-template-columns: 1fr 295px;
+        gap: 40px;
+        min-height: 500px;
+
+        @include breakpoint("md-max") {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .featureFunctionLeft {
+          min-height: 500px;
+            h2 {
+                @include heading-40;
+                position: relative;
+                color: $theme-white;
+                font-size: 30px;
+
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: 4px;
+                    width: 125px;
+                    height: 11px;
+                    background: $theme-secondary-background-color;
+                    left: 0;
+                    z-index: -1;
+                    border-radius: 8px;
+
+                    @include breakpoint("sm-max") {
+                        bottom: -4px;
+                    }
+                }
+
+                @include breakpoint("md-max") {
+                    font-size: 32px;
+
+                }
+
+                @include breakpoint("sm-max") {
+                    @include heading8-bold;
+                    font-size: 22px;
+                    // @include heading-font;
+                }
+            }
+
+            p {
+                @include font16-normal;
+                color: $theme-light-100;
+                padding: 8px 0 0 0;
+                font-size: 14px;
+
+                @include breakpoint("md-max") {
+                    font-size: 14px;
+                    line-height: 24px;
+                    padding: 12px 0 0 0;
+                }
+                    @include breakpoint("sm-max") {
+                    font-size: 12px;
+                }
+            }
+.featureDetailsSkeleton{
+                border-radius: 12px;
+    margin: 30px 0 0 0;
+                background: $theme-light-background;
+height: 200px;
+}
+            .featureFunctionBox {
+                min-height: 91px;
+                width: 100%;
+                margin: 24px 0 0 0;
+                background: $theme-light-background;
+                padding: 32px 72px 32px 32px;
+                border-radius: 12px;
+
+                @include breakpoint("sm-max") {
+                    padding: 16px;
+                }
+
+                ul {
+                    @include breakpoint("sm-max") {
+                        padding: 0 0 0 20px;
+                    }
+                    li {
+                        @include font22;
+                        @include heading-font;
+                        color: $theme-white;
+                        padding: 0 0 26px 0;
+
+                        @include breakpoint("sm-max") {
+                            font-size: 18px;
+                            line-height: 24px;
+                        }
+
+                        &:last-child {
+                            padding: 0;
+                        }
+
+                        p {
+                            padding: 8px 0 0 0;
+                            @include font16-normal;
+                            color: $theme-light-100;
+
+                            @include breakpoint("sm-max") {
+                                font-size: 14px;
+                                line-height: 21px;
+                                padding: 6px 0 0 0;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+        .featureFunctionRight {
+            min-height: 460px;
+            .gptCategoryBox {
+                background: $theme-light-background;
+                border-radius: 12px;
+                padding: 22px 26px;
+
+                @include breakpoint("sm-max") {
+                    padding: 16px;
+                }
+
+                h4 {
+                    @include heading11;
+                    color: $theme-white;
+                    position: relative;
+                    font-size: 30px;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        bottom: 4px;
+                        width: 125px;
+                        height: 11px;
+                        background: $theme-secondary-background-color;
+                        left: 0;
+                        z-index: -1;
+                        border-radius: 8px;
+                        @include breakpoint("sm-max") {
+                            bottom: -2px;
+                        }
+                    }
+
+                    @include breakpoint("md-max") {
+                        font-size: 32px;
+
+                    }
+
+                    @include breakpoint("sm-max") {
+                        font-size: 24px;
+                        line-height: 30px
+                    }
+
+                }
+
+                .gptCategoryListDetails {
+                    padding: 10px 6px;
+
+                    @include breakpoint("sm-max") {
+                        padding: 16px 0 0 0;
+                    }
+.gptCategorySkeleton{
+    list-style-type: none;
+    padding: 0;
+}
+                    ul {
+                        padding: 0 0 0 30px;
+                 
+                        li {
+                            padding: 0 0 22px 0;
+
+
+
+                            @include font16-normal;
+                            color: $theme-white;
+
+                            @include breakpoint("sm-max") {
+                                padding: 0 0 16px 0;
+                                font-size: 14px;
+                                line-height: 21px;
+                            }
+
+                            p {
+                                display: flex;
+                                align-items: center;
+                                gap: 6px;
+                                cursor: pointer;
+                                text-transform: capitalize;
+                            color: $theme-light-100;
+span{
+  display: flex !important;
+          img {
+                                    width: 10px;
+                                    height: 10px;
+                                    display: block;
+                                }
+}
+
+                          
+                            }
+
+                            &:last-child {
+                                padding: 0;
+                            }
+
+                            a {
+                                text-decoration: none;
+                                color: $theme-white;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.skelttonCategory {
+    margin: 0 0 4px 0;
+    height: 28px;
+}

@@ -1,0 +1,246 @@
+@import "../../../styles/mixins/index.scss";
+
+.filtermodalwrapper {
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  z-index: 999999;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modal {
+    width: 590px;
+    border-radius: 25px;
+    background: #0E1015;
+    border: 1px solid #2f2f2f;
+    padding: 25px 40px;
+
+    @include breakpoint("sm-max") {
+      width: calc(100% - 20px);
+      max-height: calc(100vh - 120px);
+      overflow: auto;
+      padding: 0;
+    }
+
+    .modalFooter {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+
+      @include breakpoint("sm-max") {
+        position: sticky;
+        bottom: 0;
+        background: #0e1015;
+        padding: 20px;
+      }
+
+
+      button:first-child {
+        &:hover {
+          color: $theme-black-200;
+          background-color: $theme-white;
+        }
+      }
+
+      button {
+        cursor: pointer;
+
+        border-radius: 6px;
+        border: 1.8px solid #9b9aa3;
+        padding: 10px;
+        @include font14;
+        color: rgba(255, 255, 255, 0.85);
+        background-color: transparent;
+        width: 100%;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          background-color: $theme-primary-background-color;
+          color: $theme-white;
+          border: 1px solid transparent;
+        }
+
+        &:last-child {
+          color: $theme-white;
+          border: 1px solid transparent;
+          background-color: $theme-primary-background-color;
+        }
+      }
+    }
+
+    .modalbody {
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1px 1fr;
+        gap: 30px;
+        padding: 0 0 30px 0;
+
+        @include breakpoint("sm-max") {
+          grid-template-columns: 1fr;
+          gap: 30px;
+          padding: 0 20px;
+        }
+
+        .line {
+          width: 100%;
+          height: 100%;
+          background-color: rgba(255, 255, 255, 0.12);
+
+          @include breakpoint("sm-max") {
+            display: none;
+          }
+        }
+
+        .allCheckboxContentAlignment {
+          .checkboxText:last-child {
+            padding: 0;
+          }
+
+          .checkboxText {
+            padding: 0 0 30px 0;
+            display: grid;
+            grid-template-columns: 18px 1fr;
+            gap: 13px;
+
+            .rightContent {
+              // display: grid;
+              // grid-template-columns: 18px 1fr;
+              // gap: 6px;
+              // align-items: center;
+              cursor: pointer;
+              .rightContentflex {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+
+                img {
+                  width: 18px;
+                  display: block;
+                }
+              }
+
+              span {
+                display: block;
+                @include font16;
+                 
+                color: $theme-white;
+                cursor: pointer;
+              }
+            }
+
+            input[type="checkbox"] + label {
+              display: block;
+              cursor: pointer;
+            }
+
+            input[type="checkbox"] {
+              display: none;
+            }
+
+            input[type="checkbox"] + label:before {
+              content: "✔";
+              border: 2px solid rgba(255, 255, 255, 0.32);
+              border-radius: 5px;
+              display: flex;
+              width: 18px;
+              height: 18px;
+              vertical-align: bottom;
+              color: transparent;
+              transition: 0.2s;
+              font-size: 12px !important;
+              justify-content: center;
+              align-items: center;
+            }
+
+            input[type="checkbox"]:checked + label:before {
+              background-color: $theme-primary-background-color;
+              color: $theme-white;
+              border: 2px solid transparent;
+            }
+
+            input[type="checkbox"]:checked + label:after {
+              display: block;
+              position: absolute;
+              top: 11px;
+              left: 16px;
+              width: 4px;
+              height: 10px;
+              border: 1px solid none !important;
+              border-width: 0 2px 2px 0;
+              transform: rotate(45deg);
+            }
+          }
+        }
+
+        .griditems {
+          h5 {
+            @include font18;
+             
+            color: $theme-white;
+            margin: 0 0 25px 0;
+          }
+        }
+      }
+    }
+
+    .modalHeader {
+      margin: 0 0 30px 0;
+      position: relative;
+      @include breakpoint("sm-max") {
+        padding: 20px 20px 0 20px;
+      }
+
+      .closeIcon {
+        position: absolute;
+        top: 55%;
+        transform: translateY(-50%);
+        right: 0;
+        cursor: pointer;
+        z-index: 999;
+
+        @include breakpoint("sm-max") {
+          right: 20px;
+          top: 80%;
+        }
+      }
+
+      h6 {
+        color: $theme-white;
+        @include font24;
+        text-align: center;
+        @include heading-font;
+        position: relative;
+        z-index: 9;
+
+        &::before {
+          position: absolute;
+          bottom: -2px;
+          background: $theme-secondary-background-color;
+          height: 11px;
+          border-radius: 8px;
+          content: "";
+          left: 0;
+          z-index: -1;
+          width: 110px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        @include breakpoint("sm-max") {
+          @include heading6;
+          font-size: 20px;
+          @include heading-font;
+        }
+
+        span {
+          @include heading-font;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,182 @@
+@import '../../../styles/mixins/index.scss';
+
+
+
+.faqsectionAlignment {
+    padding: 80px 0 0 0;
+
+    @include breakpoint("md-max") {
+        padding: 60px 0;
+    }
+
+
+    .title {
+        padding: 0 0 44px 0;
+
+
+        @include breakpoint("md-max") {
+            padding: 0 0 40px 0;
+        }
+
+        h3 {
+            @include heading2;
+            color: $theme-white;
+            position: relative;
+            text-align: center;
+            @include heading-font;
+
+            @include breakpoint("md-max") {
+                @include heading3;
+                @include heading-font;
+
+            }
+
+            @include breakpoint("sm-max") {
+                @include heading8-bold;
+                @include heading-font;
+
+            }
+
+            span {
+                position: relative;
+                @include heading-font;
+
+
+                &::before {
+                    position: absolute;
+                    bottom: 5px;
+                    z-index: -9;
+                    content: '';
+                    left: 0;
+                    width: 135px;
+                    height: 11px;
+                    border-radius: 8px;
+                    background: #322F87;
+
+
+                    @include breakpoint("sm-max") {
+                        bottom: -2px;
+                        width: 100%;
+                    }
+                }
+            }
+
+
+        }
+    }
+
+    .boxcenterAlignment {
+        max-width: 850px;
+        margin: 0 auto;
+
+        .mainBox:last-child {
+            margin: 0;
+        }
+
+        .mainBox {
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            margin: 0 0 32px 0;
+
+            &.show {
+                background: rgba(217, 217, 217, 0.06);
+            }
+
+            .body {
+                &.hideData {
+                    max-height: 0px;
+                    overflow: hidden;
+                    transition: .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+                }
+
+                &.showData {
+                    max-height: 500vh;
+                    overflow: hidden;
+                    transition: .5s ease-in-out;
+                }
+
+                .bodyTextGrid {
+                    display: grid;
+                    grid-template-columns: 22px 1fr;
+                    gap: 20px;
+                    padding: 20px 16px 25px 0;
+
+                    p {
+                        @include font16;
+                         
+                        text-transform: capitalize;
+                        color: $theme-light-white-700;
+                        line-height: 30px;
+
+
+                        @include breakpoint("sm-max") {
+                            @include font14;
+                        }
+                    }
+                }
+            }
+
+            .header {
+                display: grid;
+                grid-template-columns: 1fr 70px;
+                gap: 10px;
+
+
+                @include breakpoint("sm-max") {
+                    grid-template-columns: 1fr 50px;
+                }
+
+                .icon {
+                    width: 70px;
+                    height: 100%;
+                    border-radius: 0px 8px 8px 0px;
+                    background-color: $theme-light-background;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: .3s ease-in-out;
+                    cursor: pointer;
+
+
+                    @include breakpoint("sm-max") {
+                        width: 50px;
+                        height: 50px;
+                    }
+
+                    img {
+                        @include breakpoint("sm-max") {
+                            max-width: 15px;
+                        }
+                    }
+
+                    &.iconsColorChange {
+                        background-color: $theme-primary-background-color;
+                    }
+                }
+
+                .text {
+                    display: grid;
+                    grid-template-columns: 22px 1fr;
+                    gap: 20px;
+                    padding: 23px 25px;
+
+                    @include breakpoint("sm-max") {
+                        gap: 10px;
+                    }
+
+                    p {
+                        @include font18;
+                         
+                        text-transform: capitalize;
+                        color: rgba(255, 255, 255, 0.97);
+
+
+                        @include breakpoint("sm-max") {
+                            @include font16-bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

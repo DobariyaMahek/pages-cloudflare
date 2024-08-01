@@ -1,0 +1,31 @@
+@import '../../../styles/mixins/index.scss';
+
+.bottomToTop {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
+
+    svg {
+        transform: rotate(90deg);
+        cursor: pointer;
+    }
+}
+
+
+.hideButton {
+    display: none;
+}
+
+.showButton {
+    display: block;
+}

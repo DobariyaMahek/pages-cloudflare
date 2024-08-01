@@ -1,0 +1,437 @@
+@import "../../../styles/mixins/index.scss";
+
+.toolsDetailsMainSection {
+  padding: 40px 0 0 0;
+  min-height: 168px;
+
+  @include breakpoint("md-max") {
+    padding: 40px 0 0 0;
+  }
+  @include breakpoint("sm-max") {
+    padding: 20px 0 0 0;
+  }
+
+  .toolsDetailsHeaderFlex {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+
+    @include breakpoint("sm-max") {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .toolsDetailsLeftSide {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+
+      @include breakpoint("sm-max") {
+        gap: 12px;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      .toolsDetailsImg {
+        width: 120px;
+        height: 120px;
+        min-width: 120px;
+        max-width: 120px;
+
+        @include breakpoint("md-max") {
+          width: 100px;
+          height: 100px;
+          min-width: 100px;
+          max-width: 100px;
+        }
+
+        @include breakpoint("sm-max") {
+          width: 80px;
+          min-width: 80px;
+          max-width: 80px;
+          height: 80px;
+        }
+
+        .lazyImgAlignmnt {
+          width: 100%;
+          height: 100%;
+          min-width: 100%;
+          max-width: 100%;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+          background-color: $theme-white;
+          border-radius: 16px;
+        }
+      }
+
+      .toolsDetailsNameAlignment {
+        // min-height: 158px;
+        .toolHeadingAlignment{
+display: flex;
+          h1 {
+            @include heading11;
+            text-transform: capitalize;
+            color: $theme-white;
+            font-size: 30px;
+            max-width: 550px;
+            line-height: 40px;
+            margin: 0 0 10px 0;
+  
+            @include breakpoint("md-max") {
+              font-size: 32px;
+              max-width: 100%;
+            }
+  
+            @include breakpoint("sm-max") {
+              font-size: 20px;
+              line-height: 24px;
+              margin: 0 0 5px 0;
+              max-width: 100%;
+            }
+          }
+   .verifiedIconAlignment{
+            min-height: 26px;
+            max-width: 26px;
+            span{
+  display: flex !important;
+
+            }
+                        @include breakpoint("md-max") {
+                   min-height: 22px;
+            max-width: 22px;
+            }
+  
+            @include breakpoint("sm-max") {
+                  min-height: 20px;
+            max-width: 20px;
+            }
+          }
+        }
+        span {
+          @include font24;
+
+          color: $theme-light-100;
+          font-size: 18px;
+          text-transform: capitalize;
+
+          @include breakpoint("md-max") {
+            font-size: 18px;
+          }
+
+          @include breakpoint("sm-max") {
+            font-size: 14px;
+            line-height: 21px;
+          }
+        }
+       
+
+        .freeFlexAlignment {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          flex-wrap: wrap;
+          margin: 15px 0 0 0;
+
+          @include breakpoint("sm-max") {
+            margin: 4px 0 0 0;
+          }
+
+          .freeBox {
+            border: 1px solid $theme-white;
+            border-radius: 3px;
+            padding: 5px 15px;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            width: fit-content;
+
+            @include breakpoint("sm-max") {
+              gap: 8px;
+            }
+
+            .checkIcon {
+              width: 16px;
+              height: 16px;
+
+              @include breakpoint("sm-max") {
+                width: 14px;
+                height: 14px;
+              }
+
+              img {
+                width: 100%;
+                height: 100%;
+                display: block;
+              }
+            }
+
+            p {
+              @include font16-normal;
+              line-height: 19px;
+              color: $theme-white-2;
+
+              @include breakpoint("sm-max") {
+                font-size: 12px;
+                line-height: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .toolsDetailsRightSide {
+      min-height: 107px;
+      // min-width: 380px;
+      @include breakpoint("sm-max") {
+        width: 100%;
+      }
+
+      .socialIconAlignment {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 24px;
+
+        svg {
+          cursor: pointer;
+        }
+      }
+
+      p {
+        padding: 18px 0 0 0;
+        @include font18;
+        max-width: 690px;
+        font-size: 16px;
+        line-height: 22px;
+        color: $theme-white;
+        text-align: right;
+        font-family: "Mulish-Regular";
+
+        @include breakpoint("sm-max") {
+          font-size: 14px;
+          text-align: left;
+          line-height: 21px;
+        }
+      }
+
+      .toolsDetailsButtonAlignment {
+          min-height: 68px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 12px;
+        padding: 18px 0 0 0;
+
+        @include breakpoint("sm-max") {
+          display: grid;
+          grid-template-columns: 1fr 140px;
+        }
+
+        .exportButton {
+          button {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: $theme-primary-background-color;
+            @include font20;
+            letter-spacing: 3%;
+
+            cursor: pointer;
+            border: none;
+            padding: 12px 22px;
+            color: $theme-white;
+            border-radius: 8px;
+            font-size: 16px;
+            height: 50px;
+            white-space: nowrap;
+            font-family: "Mulish-Bold";
+.exportIconAlignment{
+    width: 14px;
+
+              @include breakpoint("sm-max") {
+                width: 12px;
+              }
+span{
+  display: flex;
+     
+}
+}
+       
+
+            @include breakpoint("sm-max") {
+              gap: 14px;
+              font-size: 14px;
+              padding: 0 12px;
+              height: 40px;
+              width: 100%;
+              justify-content: center;
+            }
+          }
+        }
+        .addBookMarkBG {
+          background-color: #ffffff45;
+        }
+        .bookMarkbutton {
+          border: 1px solid $theme-white;
+          border-radius: 10px;
+          padding: 10px 0;
+          min-width: 180px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          cursor: pointer;
+
+          @include breakpoint("sm-max") {
+            padding: 6px 0;
+            min-width: auto;
+            width: 100%;
+          }
+        .bookmarkIconAlignment{
+          height: 23px;
+          width: 23px;
+  span{
+  display: flex !important;
+
+}
+        }  
+
+          .bookMarkIcon {
+            // width: 16px;
+            height: 26px;
+
+            svg {
+              width: 16px;
+            }
+
+            @include breakpoint("sm-max") {
+              // width: 14px;
+
+              svg {
+                width: 14px;
+              }
+            }
+
+            img {
+              width: 100%;
+              height: 100%;
+              display: block;
+            }
+          }
+
+          p {
+            @include font16-bold;
+            letter-spacing: 3%;
+            color: $theme-white;
+            padding: 0;
+
+            @include breakpoint("sm-max") {
+              font-size: 14px;
+            }
+          }
+        }
+
+        .skeletonButton {
+          width: 180px;
+          height: 48px;
+          border-radius: 10px;
+
+          @include breakpoint("sm-max") {
+            width: 100%;
+            height: 40px;
+          }
+        }
+      }
+    }
+  }
+
+  .toolsDiscountAlignment {
+    padding: 20px 0 0 0;
+
+    .toolsDiscountBox {
+      padding: 15px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.11);
+      border-radius: 8px;
+      width: fit-content;
+
+      p {
+        @include font18;
+        line-height: 25px;
+        color: $theme-white;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.skeletonUi {
+  br {
+    display: none;
+  }
+
+  .breadcrumbSkeleton {
+    height: 21px;
+    width: 100%;
+  }
+
+  .first {
+    width: 300px;
+    height: 50px;
+    display: block;
+    margin: 0 0 4px 0;
+
+    @include breakpoint("sm-max") {
+      height: 24px;
+      width: 200px;
+    }
+  }
+
+  .second {
+    width: 300px;
+    height: 24px;
+    display: block;
+    margin: 0 0 4px 0;
+
+    @include breakpoint("sm-max") {
+      height: 16px;
+      width: 200px;
+    }
+  }
+
+  .third {
+    width: 300px;
+    height: 27px;
+    display: block;
+    width: 200px;
+  }
+}
+
+.skeletonflex {
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+  width: 180px;
+  gap: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+
+  br {
+    display: none;
+  }
+
+  .skeletonViewNoneAlignment {
+    @include breakpoint("sm-max") {
+      display: none;
+    }
+  }
+}

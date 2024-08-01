@@ -1,0 +1,319 @@
+@import "../../../styles/mixins/index.scss";
+
+.testimonialAlignment {
+  padding: 80px 0;
+
+  @include breakpoint("sm-max") {
+    padding: 0 0 60px 0;
+  }
+
+  .title {
+    padding: 0 0 44px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include breakpoint("md-max") {
+      padding: 0 0 40px 0;
+    }
+
+    h2 {
+      @include heading2;
+      color: $theme-white;
+      position: relative;
+      display: inline-block;
+      @include heading-font;
+
+      @include breakpoint("md-max") {
+        @include heading3;
+        @include heading-font;
+      }
+
+      @include breakpoint("sm-max") {
+        @include heading8-bold;
+        @include heading-font;
+      }
+
+      &::before {
+        position: absolute;
+        width: 135px;
+        height: 11px;
+        border-radius: 8px;
+        background: #322f87;
+        content: "";
+        left: 0;
+        bottom: 5px;
+        z-index: -9;
+
+        @include breakpoint("sm-max") {
+          bottom: -5px;
+        }
+      }
+    }
+
+    p {
+      @include font16;
+      color: $theme-light-100;
+      padding: 8px 0 0 0;
+
+      @include breakpoint("sm-max") {
+        @include font14;
+        padding: 12px 0 0 0;
+        line-height: 24px;
+        max-width: 75%;
+      }
+    }
+
+
+  }
+
+
+  :global(.slick-slide) {
+    padding: 0 10px;
+  }
+
+  :global(.slick-list) {
+    margin: 0 -10px;
+  }
+
+  .leftArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    left: -80px;
+    z-index: 9;
+
+    @media only screen and (max-width:"1365px") {
+      left: unset;
+      top: -35px;
+      right: 68px;
+    }
+
+
+    @include breakpoint("md-max") {
+      left: unset;
+      top: -35px;
+      right: 68px;
+    }
+  }
+
+  .rightArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    right: -80px;
+    z-index: 9;
+
+    @media only screen and (max-width:"1365px") {
+      right: 0;
+      top: -35px;
+    }
+
+    @include breakpoint("md-max") {
+      right: 0;
+      top: -35px;
+    }
+
+    img {
+      transform: rotate(180deg);
+    }
+  }
+
+  .sliderDesign {
+    .cardaligmentdesign {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+
+      .card {
+        width: 408px;
+      }
+    }
+
+    .card {
+      padding: 21px 16px 16px 16px;
+      border-radius: 18px;
+      background: #ffffff0f;
+      min-height: 200px;
+      margin-right: 40px;
+      min-width: 380px;
+      max-width: 380px;
+      width: 380px;
+      display: flex !important;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .topDetailsAlignment {
+
+        padding: 0 0 20px 0;
+
+        img[alt="testimal"] {
+          max-width: 25px;
+        }
+
+        p {
+          @include font14;
+          color: $theme-light-100;
+          padding: 10px 0 0 0;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          max-width: 290px;
+          line-height: 1.5;
+          margin: 0 auto;
+          font-weight: 300;
+          text-align: center;
+          letter-spacing: 0.4px;
+          font-style: italic;
+          -webkit-line-clamp: 3;
+        }
+      }
+
+      .bottomDetailsAlignment {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 0 0 0;
+        border-top: 1px solid #ffffff1a;
+
+        .leftSideAlignment {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+
+          .bottomProfile {
+            width: 30px;
+            height: 30px;
+            min-width: 30px;
+            max-width: 30px;
+
+            img {
+              width: 100%;
+              height: 100%;
+              display: block;
+              object-fit: cover;
+              border-radius: 50%;
+            }
+          }
+
+          span {
+            display: block;
+            @include font14;
+            color: $theme-light-100;
+          }
+        }
+
+        .starIconAlignment {
+          display: flex;
+          align-items: center;
+          gap: 1px;
+        }
+      }
+
+      .details {
+        h5 {
+          @include font18;
+          color: $theme-gray;
+          margin: 0 0 8px 0;
+        }
+
+        p {
+          @include font14;
+
+          color: $theme-light-100;
+          line-height: 23px;
+        }
+      }
+
+      .profile {
+        display: grid;
+        grid-template-columns: 50px 1fr;
+        align-items: center;
+        padding: 0 0 15px 0;
+        gap: 12px;
+
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          object-fit: cover;
+          display: block;
+        }
+
+        p {
+          @include font16-bold;
+
+          color: $theme-gray-200;
+          margin: 0 0 2px 0;
+        }
+
+        span {
+          display: block;
+          @include font14;
+          color: $theme-gray-200;
+        }
+      }
+    }
+
+    :global(.slick-arrow) {
+      display: none !important;
+    }
+  }
+}
+
+.mobileView {
+  display: none;
+
+  @include breakpoint("sm-max") {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 0 0 0;
+  }
+}
+
+.webView {
+  display: block;
+
+  @include breakpoint("sm-max") {
+    display: none;
+  }
+}
+
+.previewButton {
+  button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    @include font16;
+    color: $theme-white;
+
+    background: none;
+    border: none;
+
+    @include breakpoint("sm-max") {
+      padding: 8px 12px;
+    }
+
+    svg {
+      position: relative;
+      top: 2px;
+    }
+span{
+  display: flex !important;
+}
+    img {
+      transition: 0.3s ease-in-out;
+      // transform: rotate(180deg);
+    }
+
+    &:hover {
+      img { 
+        transform: translateX(10px);
+        // transform: rotate(180deg);
+      }
+    }
+  }
+}
